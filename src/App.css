@@ -1,38 +1,493 @@
-.App {
+
+.App{
+  font-size: unset !important;
+}
+.bootstrapOverride h2{
+  font-size: initial;
+}
+body{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  /* font-size: 12px !important; */
+  
+  /* background-color: rgb(226, 218, 218) ; */
+}
+#header {
+  display: flex;
+  align-items: flex-end;
+  margin-top: -20px;
+  margin-left: 20px;
+  width: 20%;
+  height: 15%;
+}
+
+.nLinks {
+  display: inline-block !important;
+  margin-top: 50px;
+  width: 70%;
+  height: 20% !important;
+  font-size: 28px !important;
+  float: right;
+}
+#headerNav{
+  display: inline-block;
+  width: 100%;
+  height: 15%x;
+  background-color: rgb(255, 255, 255) ;
+}
+#doorDashButton{
+  display: inline-block;
+  width: 100%;
+  height: 20px;
+  font-size: 28px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: rgb(83, 49, 116);
+  font-family:inherit;
+}
+.navBarLink {
+  margin-right: 10px;
+  background: rgb(226, 226, 216);
+  width: 10%;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(83, 49, 116);
+}
+
+.navBarLink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: lightblue;
+  z-index: -1;
+  transition: transform 300ms;
+}
+
+.navBarLink:hover::after {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.welcomemsg {
+  text-align: center;
+  font-family: "Monaco", monospace;
+}
+#titleMessage{
+font-size: 80px;
+margin-top: 15%;
+}
+#secondMessage{
+  font-size: 30px;
+  font-style: italic;
+}
+
+#welcomedes {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 28px;
+  font-family: Brush Script MT,cursive;
+}    
+#ourMeals{
   text-align: center;
 }
+#onlineOrderBox{
+  background-color: rgba(0, 255, 255, 0);
+  align-items: center;
+  margin: auto;
+  width: 95vw;
+  margin-top: 10px;
+  height: 70vh;
+  position: relative;
+  border: black;
+  border-width: .5px;
+  border-style: solid;
+  
+}
+#menuDisplay{
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  width: 75%;
+  display: inline-block;
+  position: relative;
+  
+}
+#categoryDisplay{
+  height: 100%;
+  width: 25%;
+  text-align: center;
+  background-color: rgba(109, 103, 103, 0);
+  border-right: solid;
+  border-width: .5px;
+  border-style: solid;
+  display: inline-block !important;
+  position: absolute
+}
+#mealsDisplay{
+  height: 58vh;
+  width: 74%;
+  text-align: center;
+  display: inline-block !important;
+  position: relative;
+  float: right;
+  
+}
+#cart{
+  height: 100%;
+  width: 25%;
+  text-align: center;
+  display: inline-block !important;
+  right: 0px;
+  position: absolute;
+  /* background-color: rgba(109, 103, 103, 0.671); */
+  border-right: black;
+  border-width: .5px;
+  border-style: solid;
+}
+#categoryChoose{
+width: 99%;
+height: 5%;
+text-align: center;
+padding: 1px;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+}
+#categoryChoose:hover{
+  background: lightblue;
+}
+#itemcart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 28px;
+  /* text-shadow: 2px 2px grey; */
+}    
+
+#cartbutton {
+  display: block;
+  margin: auto;
+  width: anything under 100%
+}      
+
+#added {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#costtext {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 24px;
+}    
+
+#foodname {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+ 
+  /* display: absolute;
+  justify-content: center; */
+  /* font-family: Brush Script MT,cursive; */
+  font-size: revert;
+}
+.meals{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 5%;
+}
+#fooddescription {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-family: Brush Script MT,cursive;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#foodprice {
+  display: flex;
+  align-items: flex-end;
+}
+
+#oofoodname {
+  /* display: flex; */
+  /* align-items: flex-end; */
+  justify-content: left;
+  display: absolute;
+  /*justify-content: center; */
+  /* width: 30%; */
+  /* font-family: Brush Script MT,cursive; */
+  display: inline-block !important;
+  margin-top: -10px;
+  padding-right: 15px;
+  background-color: rgba(127, 255, 212, 0);
+}
+
+#oofooddescription {
+  /* display: flex; */
+  /* align-items: flex-end; */
+  justify-content: center;
+  margin-top: -10px;
+  margin-bottom: unset;
+}
+#ooAtCButton{
+  float: right !important;
+  margin-right: 3%;
+  margin-top: 10px;
+}
+#icfoodname {
+  /* display: flex; */
+  /* align-items: flex-end; */
+  justify-content: left;
+  display: absolute;
+  justify-content: center;
+  /* width: 30%; */
+  display: inline-block !important;
+  margin-top: 4% !important;
+  padding-right: 15px;
+  width: 50%;
+  font-size: medium;
+  background-color: rgba(127, 255, 212, 0);
+  margin: auto;
+}
+#foodImage{
+  height: 60%;
+  width: 80%;
+  margin: auto;
+  margin-left: 6%;
+}
+#icrfCButton{
+  float: right !important;
+  margin-right: 3%;
+  margin-top: 2%;
+}
+#icfoodprice {
+  /* display: flex; */
+  /* align-items: flex-end; */
+  justify-content: left;
+  display: inline-block !important;
+}
+.icfood-div{
+  text-align: left;
+  width: 90%;
+  border-radius: 4px;
+  height: 50px;
+  margin-left: 8px;
+  position: relative;
+  display: inline-block !important;
+  margin-left: 10px;
+  max-width: 90%;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-top: 2px;
+  height: auto;
+  background-color: rgba(33, 150, 111, 0.596);
+}
+.food-div:hover{
+  background-color: rgba(173, 216, 230, 0.589);
+}
+#oofoodprice {
+  /* display: flex; */
+  /* align-items: flex-end; */
+  justify-content: left;
+  display: inline-block !important;
+}
+.oofood-div{
+  text-align: left;
+  width: 90%;
+  border-radius: 4px;
+  height: 100px;
+  margin-left: 8px;
+  height: auto;
+  position: relative;
+  display: inline-block !important;
+  margin-left: 10px;
+  max-width: 90%;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-top: 2px;
+  background-color: rgba(45, 146, 112, 0);
+}
+#addbutton {
+  /* display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: 48%; */
+  display: block;
+  margin: auto;
+  width: anything under 100%
+}
+
+.foodimage {
+  /* position: relative;
+  display: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+  width: 400px;
+  margin-left: 39%; */
+  display: block;
+  margin: auto;
+  width: 500px;
+  box-shadow: 5px 10px;
+}
+
+.itemincart{
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.float-child {
+  width: 18%;
+  float: left;
+}
+.pageP{
+  text-align: center;
+  height: 80%;
+  margin-top: -40px;
+  width: 100%;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://de-production.imgix.net/colors/browser/dew326.jpg");
+}
+#aboutPageP h1{
+  font-size: 60px;
+}
+
+#aboutPageP p{
+  font-size: 24px;
+}
+#aboutFirst{
+  font-size: 25px !important;
+  font-style: italic;
+}
+#aboutFinal{
+  font-size: 25px !important;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#homePageP{
+  background-image: url("https://www.pressurecookrecipes.com/wp-content/uploads/2020/01/instant-pot-pho.jpg");
+  height: 80%;
+  margin-top: -40px;
+  width: 100%;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+}
+.welcomeWindow{
+  background: rgba(255, 255, 255, 0.4);
+  width: 50%;
+  right: 0;
+  height: 100%;
+  float: right;
+}
+.food-div{
+  width: 17%;
+  border-radius: 4px;
+  height: fit-content;
+  margin-left: 8px;
+  position: relative;
+  display: inline-block !important;
+  margin-left: 10px;
+  max-width: 25%;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-top: 10px;
+  justify-content: center;
+}
+#mealsCenter{
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.menuTitles{
+  text-align: center;
+  width: 100%;
+}
+#cartPricing{
+  position: absolute;
+    bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+}
+.prices{
+  display: flex;
+  flex-direction: row;
+  height: 22%;
+}
+#cartMealsSpace{
+  height: 68%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+#menuSpace{
+  background-color: rgba(0, 255, 255, 0);
+  overflow: auto;
+  height: 85%;
+}
+#menuItemHeader{
+  background-color: #3a2f2f00;
+  font-size: 30px;
+  font-weight: 50px;
+  color: #dfdecd;
+  max-height: 20%;
+  text-align: center;
+  height: 70px;
+}
+
+#menuItemTitle{
+  font-size: 30px;
+  font-weight: bold;
+  color: black !important;
+  font-style: inherit !important;
+  font-family: 'Courier New', Courier, monospace;
+}
+#menuItemImage{
+  width: 60%;
+  height: 40%;
+}
+#menuItemDescription{
+  margin-top: 2%;
+  font-size: 20px;
+}
+#menuItemFooterPrice{
+  font-size: larger;
+}
+#menuItemFooter{
+  height: 20% !important;
+}
+#modalBody{
+  background-color: #97414100;
+  font-size: 20px;
+  font-weight: 50px;
+  text-align: left;
+  height: 60%;
+}
+#menuItemTitle{
+text-align: center !important;
+font-size: x-large;
+font-family: inherit;
+}
+#menuItemHeader{
+justify-content: center;
+}
+#modalBody{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  text-align: center;
 }

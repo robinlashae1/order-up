@@ -1,71 +1,59 @@
-# Getting Started with Create React App
+What is Grocer?
+Organize your recipes and compile shopping lists quickly with Grocer! Save your recipes, quickly find them by searching and filtering, and add all of the required ingredients to your basket with the click of a button. A great way for anyone to keep all of their favorite recipes in one place!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Technologies
+Here are the technologies utilized for Grocer:
 
-## Available Scripts
+Frontend
+TypeScript
+React
 
-In the project directory, you can run:
+Backend
+Ruby
+Rails
+PostgreSQL
+Firebase Auth
+Installing Grocer
+Firebase
+A Firebase key will need to be provided as an environment variable in order to allow for authentication. This key is found under the Firebase project settings and is called the Web API Key
 
-### `npm start`
+If you are running this app on your local machine, you can do set this variable by creating a secrets.rb file and assigning the variable there. Here's what that file looks like:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# config/secrets.rb
+ENV['firebase_key'] = 'YOUR_SECRET_KEY'
+If you are hosting this on a service, you should be able to set environment variables directly in the service (for example, Heroku has config vars). Create a variable named firebase_key and assign your API key there.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Click here to visit Firebase if you need to create an account.
 
-### `npm test`
+Keep your API keys secret!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Other Dependencies
+This project was built using Ruby version 2.7.4. To install the required gems, navigate to the root directory of this project and run this command:
 
-### `npm run build`
+bundle install
+After installing the Ruby dependencies, install the Node modules by running this command in the root directory.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install --prefix client
+Additional Steps for Local Install
+To run this app locally, PostgreSQL will need to be installed. Please follow the official instructions on PostgreSQL's site to install.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Start your local PostgreSQL server. Once running, navigate to the root directory and run these commands to create the database and run the migrations:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+rails db:create
+rails db:migrate
+Running Grocer
+Once all the dependencies are installed, Grocer can be started. First ensure that your local PostgreSQL server is running. Then start the backend by navigating to the root directory in your terminal and running this command:
 
-### `npm run eject`
+rails s
+Then the frontend can be started. Navigate to the root directory in another terminal window and run this command:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm start --prefix client
+Testing Grocer
+Testing the Backend
+Backend tests can be run simply with this command:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+rails test
+Testing the Frontend
+Frontend tests are still in development. There are a few tests in place, which can be executed with this command:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# order-up
+npm test --prefix client
