@@ -32,8 +32,7 @@ function OnlineOrdering({mealData}) {
         fullCart = fullCart.filter((item) => item.id !== meal.id)
         setCartContents(fullCart)
     }
- console.log()
-console.log(cartTotal)
+    console.log(cartTotal * .08 + cartTotal)
 
       useEffect(()=> {
         totalPrice();},
@@ -84,6 +83,7 @@ console.log(cartTotal)
                 </div>
         </div>
      );
+     
 }
 
 export default OnlineOrdering;
